@@ -413,3 +413,15 @@ section {
 .btn:hover {
   transform: translateY(-5px) scale(1.1);
 }
+
+/* ------ Client ------ */
+.client-main {
+  margin-top: 3rem;
+  text-align: center;
+}
+.client-main img {
+  max-width: 1000px;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
