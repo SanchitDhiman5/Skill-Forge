@@ -84,7 +84,7 @@ header.sticky {
   align-items: center;
 }
 .h-btn {
-  display: flex;
+  display: inline-block;
   align-items: center;
   flex-wrap: nowrap;
   padding: 8px 20px;
@@ -101,7 +101,7 @@ header.sticky {
   background: var(--main-color);
 }
 .h-icon i {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   width: 30px;
@@ -356,4 +356,60 @@ section {
   transform: scale(1.05);
   border: 1px solid var(--main-color);
   background: #ffffff;
+}
+
+/* ----- About ------- */
+.about {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  background: var(--bg2-color);
+}
+/* about left */
+.about-left h2 {
+  font-size: var(--h2-font);
+  font-weight: 500;
+  font-family: var(--font-family2);
+  color: var(--text-color);
+  line-height: 1.2;
+  margin-bottom: 15px;
+}
+.about-left p {
+  font-size: var(--p-font);
+  font-weight: 500;
+  color: var(--other-color);
+  line-height: 30px;
+}
+.about-left-in {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+.innn {
+  background: var(--bg-color);
+  padding: 15px;
+  border: 2px solid #ededed;
+  border-radius: 0.8rem;
+}
+.innn h6 {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-color);
+  margin-bottom: 8px;
+}
+.innn p {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--other-color);
+  line-height: 30px;
+}
+/* Register Now Button */
+.btn {
+  background: var(--main-color);
+}
+.btn:hover {
+  transform: translateY(-5px) scale(1.1);
 }
