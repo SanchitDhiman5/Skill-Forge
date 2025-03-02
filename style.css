@@ -672,3 +672,25 @@ footer {
   color: var(--main-color);
   transform: translateX(6px) scale(1.08);
 }
+
+/* Copyright */
+.copyright {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  background: var(--bg2-color);
+  padding: 25px 13% 25px;
+}
+.end-text p {
+  font-size: 14px;
+  color: var(--other-color);
+}
+.arrow i {
+  font-size: 20px;
+  color: var(--bg-color);
+  background: var(--main-color);
+  padding: 12px;
+  border-radius: 2rem;
+}
