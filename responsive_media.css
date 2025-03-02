@@ -180,6 +180,10 @@
   .h-btn {
     font-size: 12px;
   }
+  .btn {
+    font-size: 15px;
+    padding: 8px 15px;
+  }
   .input-form {
     justify-content: space-between;
   }
@@ -200,13 +204,7 @@
   .t-img img {
     max-width: 150px;
   }
-  /* .input-form {
-    justify-content: space-between;
-  }
-  .input-box {
-    flex: none;
-    width: 47%;
-  } */
+
   :root {
     --h1-font: 2rem;
     --h2-font: 1.6rem;

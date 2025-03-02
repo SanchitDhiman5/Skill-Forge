@@ -222,7 +222,7 @@ section {
 .t-img {
   display: inline-block;
   white-space: nowrap;
-  animation: 30s slide infinite alternate;
+  animation: 10s slide infinite linear;
 }
 .t-img img {
   max-width: 300px;
