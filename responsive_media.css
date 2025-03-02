@@ -117,3 +117,26 @@
     right: 0;
   }
 }
+
+@media (max-width: 730px) {
+  :root {
+    --h1-font: 3rem;
+    --h2-font: 2rem;
+  }
+  .input-form {
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .infinite {
+    top: -40px;
+  }
+  .newsletter-content {
+    padding: 40px 20px;
+  }
+  .newsletter-content h3 {
+    font-size: 25px;
+  }
+}
