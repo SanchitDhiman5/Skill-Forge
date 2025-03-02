@@ -12,3 +12,23 @@
     padding: 20px 7% 20px;
   }
 }
+
+@media (max-width: 1350px) {
+  header {
+    padding: 20px 2%;
+  }
+  header.sticky {
+    padding: 15px 2%;
+  }
+  section {
+    padding: 80px 5% 70px;
+  }
+  .copyright {
+    padding: 20px 5% 20px;
+  }
+  :root {
+    --h1-font: 4rem;
+    --h2-font: 3rem;
+    --p-font: 15px;
+  }
+}
