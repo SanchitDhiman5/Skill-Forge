@@ -1,8 +1,9 @@
 const header = document.querySelector("header");
 let menu = document.querySelector("#menu-icon");
 let navbar = document.querySelector(".navbar");
-const a = document.querySelectorAll('a[href="#"]');
-const navLinks = document.querySelectorAll("nav a");
+// const a = document.querySelectorAll('a[href="#"]');
+const body = document.querySelector("body");
+// const navLinks = document.querySelectorAll(".nav-link");
 window.addEventListener("scroll", function () {
   header.classList.toggle("sticky", this.window.scrollY > 50);
 });
@@ -19,17 +20,27 @@ menu.addEventListener("click", function (e) {
 });
 
 // Navbar Direct Link scroll:
-navLinks.forEach((link) => {
-  link.addEventListener("click", function (e) {
-    // e.preventDefault();
-    const targetId = this.getAttribute("href").substring(1);
-    const targetSection = document.getElementById(targetId);
-
-    if (targetSection) {
-      window.scrollTo({
-        top: targetSection.offsetTop,
-        behavior: "smooth",
-      });
+body.addEventListener("click", function (e) {
+  if (e.target.tagName === "A" && e.target.id !== "up-arrow") {
+    e.preventDefault();
+    const targetLink = e.target;
+    if (targetLink.className === "nav-link") {
+      scrollToSection(targetLink);
     }
-  });
+  }
 });
+const scrollToSection = function (link) {
+  const linkId = link.getAttribute("href").substring(1);
+  const linkSection = document.getElementById(linkId);
+
+  if (linkSection) {
+    window.scrollTo({
+      top: linkSection.offsetTop,
+      behavior: "smooth",
+    });
+    if (menu.className === "bx bx-menu bx-x") {
+      menu.classList.toggle("bx-x");
+      navbar.classList.toggle("open");
+    }
+  }
+};
