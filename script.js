@@ -1,26 +1,25 @@
 const header = document.querySelector("header");
-let menu = document.querySelector("#menu-icon");
-let navbar = document.querySelector(".navbar");
-// const a = document.querySelectorAll('a[href="#"]');
+const menu = document.querySelector("#menu-icon");
+const navbar = document.querySelector(".navbar");
+const i = document.querySelector("i");
 const body = document.querySelector("body");
-// const navLinks = document.querySelectorAll(".nav-link");
+document.body.style.overflow = "scroll";
 window.addEventListener("scroll", function () {
   header.classList.toggle("sticky", this.window.scrollY > 50);
 });
 
-// Navbar Menu:
-menu.addEventListener("click", function (e) {
+const openNavbar = function () {
   menu.classList.toggle("bx-x");
   navbar.classList.toggle("open");
-  if (navbar.classList.contains("open")) {
-    document.body.style.overflow = "hidden";
+  if (menu.className === "bx bx-menu bx-x") {
+    body.style.overflow = "hidden";
   } else {
-    document.body.style.overflow = "scroll";
+    body.style.overflow = "scroll";
   }
-});
+};
 
-// Navbar Direct Link scroll:
-body.addEventListener("click", function (e) {
+const allAnchorPreventDefault = function (e) {
+  preventDefaultITags(e);
   if (e.target.tagName === "A" && e.target.id !== "up-arrow") {
     e.preventDefault();
     const targetLink = e.target;
@@ -28,7 +27,8 @@ body.addEventListener("click", function (e) {
       scrollToSection(targetLink);
     }
   }
-});
+};
+
 const scrollToSection = function (link) {
   const linkId = link.getAttribute("href").substring(1);
   const linkSection = document.getElementById(linkId);
@@ -39,8 +39,19 @@ const scrollToSection = function (link) {
       behavior: "smooth",
     });
     if (menu.className === "bx bx-menu bx-x") {
-      menu.classList.toggle("bx-x");
-      navbar.classList.toggle("open");
+      openNavbar();
     }
   }
 };
+
+const preventDefaultITags = function (e) {
+  if (e.target.tagName === "I" && e.target.className !== "ri-arrow-up-line") {
+    e.stopPropagation();
+    e.preventDefault();
+  }
+};
+// Navbar Menu:
+menu.addEventListener("click", openNavbar);
+
+// Navbar Direct Link scroll:
+body.addEventListener("click", allAnchorPreventDefault);
